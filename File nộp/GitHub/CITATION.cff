@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this software or dataset, please cite it as below."
+type: software
+title: "Replication Archive: AI Integration Pressure, Pedagogical Autonomy, and Faculty Sustainable Performance"
+abstract: >
+  Replication archive for the paper examining whether AI integration pressure
+  and pedagogical autonomy exhibit quadratic effects on faculty sustainable
+  performance, and whether digital resilience moderates these relationships
+  as a continuous boundary condition. Analyzed using MNLFA two-stage factor
+  score regression (N = 522, Vietnamese higher education).
+authors:
+  - family-names: Tran
+    given-names: Quang Canh
+    email: canhtq@uef.edu.vn
+    orcid: "https://orcid.org/0000-0001-6513-9319"
+    affiliation: >
+      Faculty of Business Administration, Ho Chi Minh City University
+      of Economics and Finance (UEF), Vietnam
+version: "1.0.0"
+date-released: "2025-01-01"
+license: MIT
+repository-code: "https://github.com/canhtq-stack/mnlfa-ai-pressure-resilience"
+keywords:
+  - AI integration pressure
+  - digital resilience
+  - faculty sustainable performance
+  - pedagogical autonomy
+  - MNLFA
+  - moderated nonlinear factor analysis
+  - Job Demands-Resources model
+  - Vietnamese higher education
+  - technostress
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Tran
+      given-names: Quang Canh
+      orcid: "https://orcid.org/0000-0001-6513-9319"
+  title: >
+    AI Integration Pressure, Pedagogical Autonomy, and Faculty Sustainable
+    Performance: The Role of Digital Resilience in Vietnamese Higher Education
+  journal: "Computers & Education"
+  year: 2025

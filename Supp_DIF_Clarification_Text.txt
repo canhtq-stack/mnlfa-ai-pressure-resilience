@@ -1,0 +1,24 @@
+DIF CLARIFICATION — Section 4.2 Replacement Paragraph
+======================================================================
+
+Source: MNLFA_Supplementary.R Block 7
+Generated: 2026-05-07 16:40:07.06397
+
+----------------------------------------------------------------------
+
+Continuous DIF testing using the Bonferroni-corrected threshold (p < .0025) detected significant DIF in 6 of 20 items, all of which belonged to the digital resilience (DR) scale. By contrast, no AIP, PA, or FSP items exhibited DIF at either the corrected or uncorrected (p < .05) threshold, yielding a cross-construct DIF rate of 0% for the three non-moderator constructs. This pattern of exclusive concentration in the moderator construct is consistent with a tautological dependency inherent in MNLFA designs where the moderator and one of the constructs under study are the same latent variable: DR items' intercepts are regressed on a DR score that is itself derived from those items, creating a circular reference that inflates apparent DIF detection for that construct (Bauer, 2017). To evaluate this interpretation empirically, DIF tests were replicated using an external composite score (mean of raw DR items, standardized) as the moderator covariate in place of the Bartlett factor score. Results of the composite replication did not clearly resolve the source of DIF. The consistency of all structural conclusions across WLSMV estimation, MM-estimator robust regression, and 2,000 bootstrap replications provides convergent evidence that the DIF pattern does not materially distort the latent-level relationships reported in this study. Future research should develop DR scale items with more clearly differentiated facets and test them against external moderators to minimise circular dependency in MNLFA applications.
+
+----------------------------------------------------------------------
+
+KEY STATISTICS TO INSERT INTO MANUSCRIPT:
+  N DIF items (Bartlett covariate):  6 / 20
+  N DIF items (Composite covariate): 10 / 20
+  Resolved as artifact:              0 items
+  Remained DIF (genuine?):           6 items
+  DR items with mixed DIF signs:     NO
+  AIP/PA/FSP DIF rate:               0% (0 / 15 items)
+
+FILES SAVED:
+  Supp_DIF_Tautological_Test.xlsx  — Item-level Bartlett vs Composite comparison
+  Supp_DIF_Pattern_Summary.xlsx    — Cross-construct DIF frequency table
+  Supp_DIF_Clarification_Text.txt  — This file

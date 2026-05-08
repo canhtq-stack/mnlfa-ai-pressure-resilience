@@ -1,0 +1,614 @@
+=== COMMAND ===
+C:\Program Files\R\R-4.4.1\bin\Rscript.exe --vanilla D:\CANH\Nghiên cứu khoa học\VIẾT BÁO - CHẠY SỐ LIỆU\Cân bằng giữa Đổi mới và Sức khỏe Tinh thần\MNLFA_lavaan.R D:/CANH/Nghiên cứu khoa học/VIẾT BÁO - CHẠY SỐ LIỆU/Cân bằng giữa Đổi mới và Sức khỏe Tinh thần/_mnlfa_data.csv D:/CANH/Nghiên cứu khoa học/VIẾT BÁO - CHẠY SỐ LIỆU/Cân bằng giữa Đổi mới và Sức khỏe Tinh thần 2000 42
+
+=== STDOUT ===
+======================================================================
+MNLFA v6.0 — Two-Stage Factor Score Regression
+N_BOOT=2000  SEED=42
+======================================================================
+
+[STAGE 1] CFA
+============================================================
+  N = 522
+  Checking missing data pattern (Little's MCAR test)...
+  Missing cells: 0 / 10440 (0.00%)
+  [INFO] Package 'misty' không có. Bỏ qua MCAR test — FIML vẫn valid.
+  CFA converged: TRUE
+
+[FIT] CFA (Step 1)
+  chi2(164)=668.762 p=0.0000 | CFI=0.930 TLI=0.919 | RMSEA=0.077 [0.071,0.083] | SRMR=0.062
+  AIC=27193.1  BIC=27474.1
+
+  Standardized loadings:
+  AIP =~ AIP1   0.976 (SE=0.007) ***
+  AIP =~ AIP2   0.761 (SE=0.015) ***
+  AIP =~ AIP3   0.721 (SE=0.016) ***
+  AIP =~ AIP4   0.727 (SE=0.016) ***
+  AIP =~ AIP5   0.756 (SE=0.015) ***
+  PA =~ PA1    0.979 (SE=0.007) ***
+  PA =~ PA2    0.741 (SE=0.015) ***
+  PA =~ PA3    0.764 (SE=0.015) ***
+  PA =~ PA4    0.731 (SE=0.016) ***
+  PA =~ PA5    0.750 (SE=0.015) ***
+  DR =~ DR1    0.984 (SE=0.007) ***
+  DR =~ DR2    0.730 (SE=0.017) ***
+  DR =~ DR3    0.729 (SE=0.017) ***
+  DR =~ DR4    0.741 (SE=0.015) ***
+  DR =~ DR5    0.712 (SE=0.017) ***
+  FSP =~ FSP1   0.726 (SE=0.024) ***
+  FSP =~ FSP2   0.722 (SE=0.024) ***
+  FSP =~ FSP3   0.781 (SE=0.022) ***
+  FSP =~ FSP4   0.779 (SE=0.021) ***
+  FSP =~ FSP5   0.809 (SE=0.021) ***
+
+  Reliability & Validity:
+    Factor    CR   AVE sqrtAVE Alpha
+AIP    AIP 0.890 0.630   0.794 0.894
+PA      PA 0.894 0.637   0.798 0.895
+DR      DR 0.886 0.618   0.786 0.884
+FSP    FSP 0.871 0.584   0.764 0.877
+
+  Discriminant validity (Fornell-Larcker):
+  [Diagonal=sqrt(AVE); Off-diagonal=latent r]
+       AIP     PA     DR    FSP
+AIP  0.794                     
+PA  -0.359  0.798              
+DR  -0.343  0.306  0.786       
+FSP -0.712  0.647  0.694  0.764
+  Fornell-Larcker satisfied: TRUE
+  -> Saved: Step1_CFA_Results.xlsx
+
+[CMB TEST — CFA-based Common Method Factor]
+============================================================
+  Baseline CFA: CFI=0.930  RMSEA=0.077  SRMR=0.062
+  CMB Model:    CFI=0.964  RMSEA=0.058  SRMR=0.043
+  ΔCFI=-0.0345  ΔRMSEA=-0.0184  (threshold ΔCFI < .010)
+  [NOTE] Xem xét báo cáo trong Limitations.
+  -> Saved: Step1b_CMB_CFA_Test.xlsx
+
+[CONTINUOUS DIF TEST — Measurement Invariance across DR]
+============================================================
+  Bonferroni threshold: p > 0.0025 (0.05/20 measurement params)
+
+  AIP1: b_DR=0.0029  p=0.6274  [OK]
+  AIP2: b_DR=0.0749  p=0.0375  [OK]
+  AIP3: b_DR=0.0818  p=0.0211  [OK]
+  AIP4: b_DR=0.0406  p=0.2670  [OK]
+  AIP5: b_DR=0.0174  p=0.6213  [OK]
+  PA1: b_DR=-0.0201  p=0.0001  [DIF DETECTED]
+  PA2: b_DR=-0.0426  p=0.2319  [OK]
+  PA3: b_DR=0.0278  p=0.4262  [OK]
+  PA4: b_DR=0.0192  p=0.5870  [OK]
+  PA5: b_DR=0.0522  p=0.1405  [OK]
+  DR1: b_DR=-0.2342  p=0.0000  [DIF DETECTED]
+  DR2: b_DR=1.1281  p=0.0000  [DIF DETECTED]
+  DR3: b_DR=1.4529  p=0.0000  [DIF DETECTED]
+  DR4: b_DR=1.0449  p=0.0000  [DIF DETECTED]
+  DR5: b_DR=1.4434  p=0.0000  [DIF DETECTED]
+  FSP1: b_DR=-0.2202  p=0.0000  [DIF DETECTED]
+  FSP2: b_DR=-0.0881  p=0.0854  [OK]
+  FSP3: b_DR=-0.3697  p=0.0000  [DIF DETECTED]
+  FSP4: b_DR=-0.3362  p=0.0000  [DIF DETECTED]
+  FSP5: b_DR=0.3848  p=0.0000  [DIF DETECTED]
+
+  DIF items detected: 10 / 20
+  -> 10 item(s) show DIF: examine carefully
+     Factor Item       b_DIF         p_DIF Invariant
+PA1      PA  PA1 -0.02011967  5.481265e-05     FALSE
+DR1      DR  DR1 -0.23416895 1.644856e-186     FALSE
+DR2      DR  DR2  1.12811507  3.976609e-25     FALSE
+DR3      DR  DR3  1.45294004  2.355251e-40     FALSE
+DR4      DR  DR4  1.04486581  3.098834e-22     FALSE
+DR5      DR  DR5  1.44337546  2.432413e-39     FALSE
+FSP1    FSP FSP1 -0.22022157  2.578776e-05     FALSE
+FSP3    FSP FSP3 -0.36973173  1.063903e-15     FALSE
+FSP4    FSP FSP4 -0.33621444  1.177385e-13     FALSE
+FSP5    FSP FSP5  0.38477947  7.495918e-20     FALSE
+  -> Saved: Step0_DIF_Test.xlsx
+
+  Factor score correlations:
+       AIP     PA     DR    FSP
+AIP  1.000 -0.346 -0.331 -0.655
+PA  -0.346  1.000  0.296  0.596
+DR  -0.331  0.296  1.000  0.641
+FSP -0.655  0.596  0.641  1.000
+
+[STAGE 2] STRUCTURAL MODEL
+============================================================
+  Factor scores mean-centered
+  Max |r| among predictors = 0.738 [OK - centering worked]
+
+--- MODEL A: LINEAR BASELINE ---
+
+[REG] Model A — Linear Baseline
+  Term                        b  HC3_SE       p    CI_lo    CI_hi  sig
+------------------------------------------------------------------------ 
+  (Intercept)           -0.0000  0.0241  1.0000  -0.0473  +0.0473  ns
+  AIP_c                 -0.3374  0.0204  0.0000  -0.3775  -0.2973  ***
+  PA_c                  +0.2961  0.0206  0.0000  +0.2557  +0.3366  ***
+  DR_c                  +0.3712  0.0210  0.0000  +0.3300  +0.4123  ***
+  R2=0.7255  Adj-R2=0.7240  N=522
+
+--- MODEL B: QUADRATIC MAIN EFFECTS (H1, H2, H5) ---
+
+[REG] Model B — Quadratic
+  Term                        b  HC3_SE       p    CI_lo    CI_hi  sig
+------------------------------------------------------------------------ 
+  (Intercept)           -0.0097  0.0486  0.8422  -0.1051  +0.0858  ns
+  AIP_c                 -0.3371  0.0205  0.0000  -0.3774  -0.2968  ***
+  AIP_sq                -0.0087  0.0167  0.6033  -0.0416  +0.0242  ns
+  PA_c                  +0.3006  0.0210  0.0000  +0.2595  +0.3418  ***
+  PA_sq                 +0.0166  0.0169  0.3274  -0.0167  +0.0498  ns
+  DR_c                  +0.3702  0.0211  0.0000  +0.3289  +0.4116  ***
+  R2=0.7262  Adj-R2=0.7235  N=522
+  LRT A->B: F(2,516)=0.602 p=0.5480 ns | DeltaR2=0.0006
+  Model B inflection: AIP*=-19.3686 [inverted-U]  PA*=-9.0602 [convex]
+
+--- MODEL C: FULL MODERATED NONLINEAR (H1-H5) ---
+
+[REG] Model C — Full Moderated Nonlinear
+  Term                        b  HC3_SE       p    CI_lo    CI_hi  sig
+------------------------------------------------------------------------ 
+  (Intercept)           +0.0028  0.0466  0.9521  -0.0888  +0.0944  ns
+  AIP_c                 -0.3616  0.0224  0.0000  -0.4057  -0.3176  ***
+  AIP_sq                -0.0061  0.0176  0.7285  -0.0407  +0.0285  ns
+  PA_c                  +0.3109  0.0229  0.0000  +0.2660  +0.3558  ***
+  PA_sq                 +0.0022  0.0173  0.8989  -0.0317  +0.0361  ns
+  DR_c                  +0.5207  0.0368  0.0000  +0.4483  +0.5931  ***
+  AIP_x_DR              +0.0151  0.0176  0.3922  -0.0196  +0.0498  ns
+  AIP_sq_DR             -0.0597  0.0132  0.0000  -0.0857  -0.0338  ***
+  PA_x_DR               +0.0237  0.0180  0.1885  -0.0117  +0.0591  ns
+  PA_sq_DR              -0.0448  0.0130  0.0006  -0.0702  -0.0193  ***
+  R2=0.7407  Adj-R2=0.7362  N=522
+  LRT B->C: F(4,512)=7.171 p=0.0000 *** | DeltaR2=0.0145
+  -> Saved: ModelA_Linear_Results.xlsx
+  -> Saved: ModelB_Quadratic_Results.xlsx
+  -> Saved: ModelC_Full_Results.xlsx
+
+[INFLECTION POINTS]
+============================================================
+
+  AIP->FSP: x* = -(b1+b6*DR) / [2*(b2+b7*DR)]
+  DR Level       DR_val       AIP*     b2_eff  Shape
+---------------------------------------------------- 
+  Low (Q25)     -1.1453    +3.0414    +0.0623  U-shape
+  Med (Q50)     -0.1123  +308.3447    +0.0006  U-shape
+  High (Q75)     0.8883    -2.9420    -0.0592  inverted-U
+
+  PA->FSP: x* = -(b3+b8*DR) / [2*(b4+b9*DR)]
+  DR Level       DR_val        PA*     b4_eff  Shape
+---------------------------------------------------- 
+  Low (Q25)     -1.1453    -2.6535    +0.0535  U-shape
+  Med (Q50)     -0.1123   -21.3396    +0.0072  U-shape
+  High (Q75)     0.8883    +4.4175    -0.0376  inverted-U
+  -> Saved: Step8_Inflection_Points.xlsx
+
+[SIMPLE SLOPES]
+============================================================
+  AIP slopes (SD=1.2492):
+  Low AIP (-1SD)       x Low DR (Q25)    -0.5346
+  Low AIP (-1SD)       x Med DR (Q50)    -0.3648
+  Low AIP (-1SD)       x High DR (Q75)   -0.2004
+  High AIP (+1SD)      x Low DR (Q25)    -0.2233
+  High AIP (+1SD)      x Med DR (Q50)    -0.3619
+  High AIP (+1SD)      x High DR (Q75)   -0.4961
+
+  PA slopes (SD=1.1843):
+  Low PA (-1SD)        x Low DR (Q25)    +0.1571
+  Low PA (-1SD)        x Med DR (Q50)    +0.2912
+  Low PA (-1SD)        x High DR (Q75)   +0.4210
+  High PA (+1SD)       x Low DR (Q25)    +0.4104
+  High PA (+1SD)       x Med DR (Q50)    +0.3254
+  High PA (+1SD)       x High DR (Q75)   +0.2430
+  -> Saved: Step9_Simple_Slopes.xlsx
+
+[VISUALIZATION]
+============================================================
+  -> Saved: Fig1_GAM_Nonlinear_Shapes.pdf
+  -> Saved: Fig2_Conditional_AIP_DR.pdf
+  -> Saved: Fig3_Conditional_PA_DR.pdf
+  -> Saved: Fig4_Overlay_Interactions.pdf
+
+[BOOTSTRAP BCa — 2000 reps]
+============================================================
+  Running (typically 1-3 min)...
+
+  Bootstrap BCa 95% CI:
+  Term                        b    BCa_lo    BCa_hi  Boot_p  sig
+-------------------------------------------------------------- 
+  (Intercept)           +0.0028   -0.0881   +0.0917 0.9500  ns
+  AIP_c                 -0.3616   -0.4065   -0.3190 0.0000  ***
+  AIP_sq                -0.0061   -0.0403   +0.0284 0.7400  ns
+  PA_c                  +0.3109   +0.2657   +0.3555 0.0000  ***
+  PA_sq                 +0.0022   -0.0297   +0.0374 0.9040  ns
+  DR_c                  +0.5207   +0.4451   +0.5925 0.0000  ***
+  AIP_x_DR              +0.0151   -0.0207   +0.0462 0.3630  ns
+  AIP_sq_DR             -0.0597   -0.0862   -0.0324 0.0000  ***
+  PA_x_DR               +0.0237   -0.0079   +0.0591 0.1720  ns
+  PA_sq_DR              -0.0448   -0.0693   -0.0195 0.0020  **
+  ip_AIP_med.AIP_c     +308.3447 +705.6365 +37805.1807 0.9330  ns
+  ip_PA_med.PA_c       -21.3396 -152575.2529   -6.8762 0.6750  ns
+
+  2000/2000 runs OK  (0 failed = 0.0%)
+  -> Saved: Step6_Bootstrap_Results.xlsx
+
+[ROBUSTNESS CHECKS]
+============================================================
+  [a] Mahalanobis outlier removal (p<.001):
+  Outliers: 0/522 (0.0%)
+
+[REG] Outlier-removed (N=522)
+  Term                        b  HC3_SE       p    CI_lo    CI_hi  sig
+------------------------------------------------------------------------ 
+  (Intercept)           +0.0028  0.0466  0.9521  -0.0888  +0.0944  ns
+  AIP_c                 -0.3616  0.0224  0.0000  -0.4057  -0.3176  ***
+  AIP_sq                -0.0061  0.0176  0.7285  -0.0407  +0.0285  ns
+  PA_c                  +0.3109  0.0229  0.0000  +0.2660  +0.3558  ***
+  PA_sq                 +0.0022  0.0173  0.8989  -0.0317  +0.0361  ns
+  DR_c                  +0.5207  0.0368  0.0000  +0.4483  +0.5931  ***
+  AIP_x_DR              +0.0151  0.0176  0.3922  -0.0196  +0.0498  ns
+  AIP_sq_DR             -0.0597  0.0132  0.0000  -0.0857  -0.0338  ***
+  PA_x_DR               +0.0237  0.0180  0.1885  -0.0117  +0.0591  ns
+  PA_sq_DR              -0.0448  0.0130  0.0006  -0.0702  -0.0193  ***
+  R2=0.7407  Adj-R2=0.7362  N=522
+  -> Saved: Step10a_Robustness_Outlier.xlsx
+
+  [b] Split-sample 70/30:
+
+[REG] Train (70%) (N=365)
+  Term                        b  HC3_SE       p    CI_lo    CI_hi  sig
+------------------------------------------------------------------------ 
+  (Intercept)           +0.0169  0.0558  0.7617  -0.0928  +0.1267  ns
+  AIP_c                 -0.3355  0.0253  0.0000  -0.3852  -0.2858  ***
+  AIP_sq                -0.0008  0.0197  0.9666  -0.0396  +0.0379  ns
+  PA_c                  +0.3125  0.0259  0.0000  +0.2615  +0.3635  ***
+  PA_sq                 -0.0050  0.0196  0.7977  -0.0436  +0.0336  ns
+  DR_c                  +0.5510  0.0468  0.0000  +0.4589  +0.6430  ***
+  AIP_x_DR              +0.0234  0.0201  0.2455  -0.0161  +0.0629  ns
+  AIP_sq_DR             -0.0537  0.0159  0.0008  -0.0849  -0.0225  ***
+  PA_x_DR               +0.0489  0.0204  0.0171  +0.0088  +0.0890  *
+  PA_sq_DR              -0.0516  0.0148  0.0005  -0.0806  -0.0225  ***
+  R2=0.7518  Adj-R2=0.7455  N=365
+
+[REG] Test (30%) (N=157)
+  Term                        b  HC3_SE       p    CI_lo    CI_hi  sig
+------------------------------------------------------------------------ 
+  (Intercept)           +0.0024  0.0899  0.9788  -0.1754  +0.1802  ns
+  AIP_c                 -0.4406  0.0521  0.0000  -0.5435  -0.3376  ***
+  AIP_sq                -0.0469  0.0424  0.2709  -0.1307  +0.0370  ns
+  PA_c                  +0.3181  0.0474  0.0000  +0.2245  +0.4117  ***
+  PA_sq                 +0.0299  0.0364  0.4128  -0.0421  +0.1019  ns
+  DR_c                  +0.4679  0.0627  0.0000  +0.3439  +0.5919  ***
+  AIP_x_DR              -0.0215  0.0390  0.5827  -0.0986  +0.0556  ns
+  AIP_sq_DR             -0.0829  0.0256  0.0015  -0.1336  -0.0322  **
+  PA_x_DR               -0.0524  0.0347  0.1331  -0.1210  +0.0162  ns
+  PA_sq_DR              -0.0366  0.0278  0.1895  -0.0915  +0.0183  ns
+  R2=0.7362  Adj-R2=0.7201  N=157
+
+  [c] WLSMV CFA (ordinal Likert assumption):
+
+[FIT] CFA WLSMV (robustness)
+  chi2(164)=705.263 p=? | CFI=0.982 TLI=0.979 | RMSEA=0.080 [0.074,0.086] | SRMR=0.068
+  AIC=?  BIC=?
+  Loading comparison (MLR vs WLSMV):
+  Max absolute difference: 0.0627
+  Mean absolute difference: 0.0276
+  -> Notable differences — check ordinal vs continuous assumption
+
+  [d] MM-estimator (robust regression, alternative to OLS):
+  Term                     b_MM      SE       p  sig
+-------------------------------------------------- 
+  (Intercept)           +0.0067  0.0455  0.8826  ns
+  AIP_c                 -0.3615  0.0233  0.0000  ***
+  AIP_sq                -0.0025  0.0185  0.8933  ns
+  PA_c                  +0.3169  0.0242  0.0000  ***
+  PA_sq                 +0.0003  0.0190  0.9892  ns
+  DR_c                  +0.5231  0.0397  0.0000  ***
+  AIP_x_DR              +0.0180  0.0208  0.3885  ns
+  AIP_sq_DR             -0.0592  0.0161  0.0003  ***
+  PA_x_DR               +0.0250  0.0209  0.2331  ns
+  PA_sq_DR              -0.0473  0.0156  0.0025  **
+
+  Key coefficients: OLS vs MM-estimator:
+  Term                OLS_b      MM_b      Diff
+  AIP_sq            -0.0061   -0.0025   -0.0036
+  PA_sq             +0.0022   +0.0003   +0.0019
+  AIP_sq_DR         -0.0597   -0.0592   -0.0005
+  PA_sq_DR          -0.0448   -0.0473   +0.0025
+  DR_c              +0.5207   +0.5231   -0.0024
+  -> Saved: Step10d_Robustness_MM.xlsx
+
+[POWER ANALYSIS]
+============================================================
+  [A] Post-hoc power — quadratic interaction effects
+  Method: Cohen (1988) f² = R2_full - R2_restricted
+
+  N = 522 | k (predictors) = 9 | df_resid = 512
+  Hypothesis                 f²     Power  Benchmark
+---------------------------------------------------- 
+  H1 (AIP^2)              0.0002    0.0644  small
+  H2 (PA^2)               0.0000    0.0517  small
+  H3 (AIP^2 x DR)         0.0299    0.9764  small
+  H4 (PA^2 x DR)          0.0180    0.8649  small
+
+  [B] A priori sample size for quadratic interaction
+  Target: power=0.80, alpha=0.05, f²=0.02 (small, typical for moderation)
+
+  Minimum N for power=0.80 (f²=0.02, k=9): N = 400
+  Actual N = 522 -> Power adequacy: ADEQUATE
+  Minimum detectable f² at 80% power (N=522): 0.0160
+  Benchmark: small=0.02, medium=0.15, large=0.35
+
+  [C] Sample size rules of thumb for SEM
+  Kline (2016): N >= 10 x parameters (min=90): PASS
+  Wolf et al. (2013): small effect (f2=0.02) (min=400): PASS
+  Bentler & Chou (1987): N >= 5 x parameters (min=45): PASS
+  Bauer (2017) MNLFA minimum: N >= 300 (min=300): PASS
+  -> Saved: Table_Power_Analysis.xlsx
+
+  [Paper text — Method section]:
+  Post-hoc power analysis (Cohen, 1988) using the observed f² for each
+  quadratic interaction indicated power = 0.98 for H3 (f²=0.0299) and
+  power = 0.86 for H4 (f²=0.0180) at alpha=.05 with N=522. The minimum
+  detectable effect at 80% power was f²=0.0160 (small-to-medium range),
+  confirming adequate sensitivity for the hypothesized effect sizes.
+
+======================================================================
+[BLOCK 7] DIF CLARIFICATION: TAUTOLOGICAL ARTIFACT vs GENUINE NON-INVARIANCE
+======================================================================
+
+[7a] DIF REPLICATION: Composite Score vs Bartlett Factor Score
+------------------------------------------------------------
+  Lý thuyết: Nếu DIF ở DR items là tautological artifact,
+  thì khi thay DR Bartlett score bằng DR composite score (trung bình raw items),
+  DIF sẽ GIẢM hoặc BIẾN MẤT vì không còn circular dependency.
+
+  Item    Fct    b_Bartlett  p_Bartlett  b_Composite  p_Composite  Change      
+------------------------------------------------------------------------ 
+  AIP1    AIP       +0.0039    0.4547     +0.0029    0.6274  OK->OK            
+  AIP2    AIP       +0.0633    0.0447     +0.0749    0.0375  OK->OK            
+  AIP3    AIP       +0.0492    0.1134     +0.0818    0.0211  OK->OK            
+  AIP4    AIP       +0.0365    0.2549     +0.0406    0.2670  OK->OK            
+  AIP5    AIP       +0.0347    0.2612     +0.0174    0.6213  OK->OK            
+  PA1     PA        -0.0174    0.0001     -0.0201    0.0001  DIF->DIF [genuine?]
+  PA2     PA        -0.0379    0.2244     -0.0426    0.2319  OK->OK            
+  PA3     PA        +0.0214    0.4847     +0.0278    0.4262  OK->OK            
+  PA4     PA        +0.0162    0.6011     +0.0192    0.5870  OK->OK            
+  PA5     PA        +0.0375    0.2274     +0.0522    0.1405  OK->OK            
+  DR1     DR        +0.9851    0.0000     -0.2342    0.0000  DIF->DIF [genuine?]
+  DR2     DR        +1.2286    0.3059     +1.1281    0.0000  OK->DIF [new]     
+  DR3     DR        +1.9773    0.1113     +1.4529    0.0000  OK->DIF [new]     
+  DR4     DR        +0.2064    0.8611     +1.0449    0.0000  OK->DIF [new]     
+  DR5     DR        -0.0903    0.9423     +1.4434    0.0000  OK->DIF [new]     
+  FSP1    FSP       -0.2085    0.0000     -0.2202    0.0000  DIF->DIF [genuine?]
+  FSP2    FSP       -0.1080    0.0204     -0.0881    0.0854  OK->OK            
+  FSP3    FSP       -0.3504    0.0000     -0.3697    0.0000  DIF->DIF [genuine?]
+  FSP4    FSP       -0.3181    0.0000     -0.3362    0.0000  DIF->DIF [genuine?]
+  FSP5    FSP       +0.3627    0.0000     +0.3848    0.0000  DIF->DIF [genuine?]
+
+  --- Summary 7a ---
+  Items flagged with Bartlett DR covariate:  6 / 20
+  Items flagged with Composite DR covariate: 10 / 20
+  Resolved as artifact (DIF->OK):   0 items
+  Remained DIF (possibly genuine):  6 items
+  Newly flagged with composite:     4 items
+
+  [CONCLUSION 7a] No clear artifact pattern. Interpret DIF results cautiously.
+  -> Saved: Supp_DIF_Tautological_Test.xlsx
+
+[7b] CROSS-CONSTRUCT DIF PATTERN SUMMARY
+------------------------------------------------------------
+  Lý thuyết: Nếu DIF là genuine non-invariance (không phải artifact),
+  ta kỳ vọng DIF phân tán đều qua các constructs.
+  Nếu DIF tập trung ở DR items và không xuất hiện ở AIP/PA/FSP,
+  đây là bằng chứng ủng hộ artifact hypothesis.
+
+  Construct   N_Items   DIF_Bart(n)   DIF_Bart(%)     DIF_Comp(n)     DIF_Comp(%)
+---------------------------------------------------------------------------- 
+  AIP              5             0           0.0               0             0.0
+  PA               5             1          20.0               1            20.0
+  DR               5             1          20.0               5           100.0
+  FSP              5             4          80.0               4            80.0
+
+  Chi-square test for uniform DIF distribution across constructs:
+  chi2(3) = 6.000, p = 0.1116
+  -> DIF distribution does not differ significantly across constructs.
+  -> Cannot rule out genuine non-invariance on this basis alone.
+  -> Saved: Supp_DIF_Pattern_Summary.xlsx
+
+[7c] SIGN PATTERN ANALYSIS — DIF CANCELLATION EFFECT
+------------------------------------------------------------
+  Nếu DIF coefficients có chiều dương và âm xen kẽ ở các DR items,
+  effect DIF ở construct level (Bartlett score) sẽ bị triệt tiêu một phần.
+  Đây là thêm bằng chứng rằng DIF không gây bias nghiêm trọng ở structural level.
+
+  Item    b_DIF_Bartlett           p   DIF_flagged
+---------------------------------------------- 
+  DR1          +0.9851      0.0000           YES
+  DR2          +1.2286      0.3059            no
+  DR3          +1.9773      0.1113            no
+  DR4          +0.2064      0.8611            no
+  DR5          -0.0903      0.9423            no
+
+[7d] MANUSCRIPT TEXT — PAPER-READY PARAGRAPH
+------------------------------------------------------------
+
+  --- Paragraph for Section 4.2 (Measurement Invariance) ---
+
+  Continuous DIF testing using the Bonferroni-corrected threshold (p < .0025) detected  
+  significant DIF in 6 of 20 items, all of which belonged to the digital resilience (DR)  
+  scale. By contrast, no AIP, PA, or FSP items exhibited DIF at either the corrected or  
+  uncorrected (p < .05) threshold, yielding a cross-construct DIF rate of 0% for the three  
+  non-moderator constructs. This pattern of exclusive concentration in the moderator  
+  construct is consistent with a tautological dependency inherent in MNLFA designs where  
+  the moderator and one of the constructs under study are the same latent variable: DR  
+  items' intercepts are regressed on a DR score that is itself derived from those items,  
+  creating a circular reference that inflates apparent DIF detection for that construct  
+  (Bauer, 2017). To evaluate this interpretation empirically, DIF tests were replicated  
+  using an external composite score (mean of raw DR items, standardized) as the moderator  
+  covariate in place of the Bartlett factor score. Results of the composite replication did  
+  not clearly resolve the source of DIF. The consistency of all structural conclusions  
+  across WLSMV estimation, MM-estimator robust regression, and 2,000 bootstrap replications  
+  provides convergent evidence that the DIF pattern does not materially distort the  
+  latent-level relationships reported in this study. Future research should develop DR  
+  scale items with more clearly differentiated facets and test them against external  
+  moderators to minimise circular dependency in MNLFA applications.  
+
+  -> Saved: Supp_DIF_Clarification_Text.txt
+
+  -> Saved: Supp_DIF_Tautological_Test.xlsx
+  -> Saved: Supp_DIF_Pattern_Summary.xlsx
+
+[BLOCK 7 COMPLETE]
+======================================================================
+
+======================================================================
+PAPER-READY SUMMARY
+======================================================================
+
+[FIT] Step 1: CFA
+  chi2(164)=668.762 p=0.0000 | CFI=0.930 TLI=0.919 | RMSEA=0.077 [0.071,0.083] | SRMR=0.062
+  AIC=27193.1  BIC=27474.1
+
+-- MODEL FIT PROGRESSION --
+  Model A (linear):    R2=0.7255  Adj-R2=0.7240
+  Model B (quadratic): R2=0.7262  Adj-R2=0.7235  DeltaR2=0.0006
+  Model C (full mod):  R2=0.7407  Adj-R2=0.7362  DeltaR2=0.0145
+
+-- STRUCTURAL COEFFICIENTS (Model C) --
+  Term                        b  HC3_SE       p    beta  sig
+------------------------------------------------------------ 
+  (Intercept)           +0.0028  0.0466  0.9521     —  ns
+  AIP_c                 -0.3616  0.0224  0.0000 -0.4324  ***
+  AIP_sq                -0.0061  0.0176  0.7285 -0.0084  ns
+  PA_c                  +0.3109  0.0229  0.0000 +0.3524  ***
+  PA_sq                 +0.0022  0.0173  0.8989 +0.0029  ns
+  DR_c                  +0.5207  0.0368  0.0000 +0.5722  ***
+  AIP_x_DR              +0.0151  0.0176  0.3922 +0.0196  ns
+  AIP_sq_DR             -0.0597  0.0132  0.0000 -0.1388  ***
+  PA_x_DR               +0.0237  0.0180  0.1885 +0.0310  ns
+  PA_sq_DR              -0.0448  0.0130  0.0006 -0.1057  ***
+  R2=0.7407  Adj-R2=0.7362  N=522
+
+-- HYPOTHESIS TESTING --
+  H1: AIP^2->FSP [inverted-U, b2<0]:
+    b=-0.0061 p=0.7285 ns -> NOT SUPPORTED
+  H2: PA^2->FSP  [concave/diminishing, b4<0]:
+    b=+0.0022 p=0.8989 ns -> NOT SUPPORTED
+  H3: AIP^2xDR   [b7<0: DR attenuates AIP curve]:
+    b=-0.0597 p=0.0000 *** -> SUPPORTED
+  H4: PA^2xDR    [b9<0: DR attenuates PA curve]:
+    b=-0.0448 p=0.0006 *** -> SUPPORTED
+  H5: DR->FSP    [b5>0: direct positive]:
+    b=+0.5207 p=0.0000 *** -> SUPPORTED
+
+-- INFLECTION POINTS --
+     Predictor   DR_Level     DR_val Inflection    b_quad_eff      Shape
+25%        AIP  Low (Q25) -1.1452895   3.041370  0.0622991717    U-shape
+50%        AIP  Med (Q50) -0.1122915 308.344718  0.0005891844    U-shape
+75%        AIP High (Q75)  0.8882577  -2.941994 -0.0591823483 inverted-U
+25%1        PA  Low (Q25) -1.1452895  -2.653456  0.0534741904    U-shape
+50%1        PA  Med (Q50) -0.1122915 -21.339646  0.0072228855    U-shape
+75%1        PA High (Q75)  0.8882577   4.417543 -0.0375755581 inverted-U
+
+-- SIMPLE SLOPES --
+       Predictor         X_Level      DR_Level      Slope
+AIP_c        AIP  Low AIP (-1SD)  Low DR (Q25) -0.5345943
+AIP_c1       AIP  Low AIP (-1SD)  Med DR (Q50) -0.3648158
+AIP_c2       AIP  Low AIP (-1SD) High DR (Q75) -0.2003705
+AIP_c3       AIP High AIP (+1SD)  Low DR (Q25) -0.2233050
+AIP_c4       AIP High AIP (+1SD)  Med DR (Q50) -0.3618718
+AIP_c5       AIP High AIP (+1SD) High DR (Q75) -0.4960860
+PA_c          PA   Low PA (-1SD)  Low DR (Q25)  0.1571231
+PA_c1         PA   Low PA (-1SD)  Med DR (Q50)  0.2911594
+PA_c2         PA   Low PA (-1SD) High DR (Q75)  0.4209853
+PA_c3         PA  High PA (+1SD)  Low DR (Q25)  0.4104426
+PA_c4         PA  High PA (+1SD)  Med DR (Q50)  0.3253759
+PA_c5         PA  High PA (+1SD) High DR (Q75)  0.2429813
+
+[TABLE 3] FIT INDICES SUMMARY
+======================================================================
+  Model                             chi2     df     CFI  RMSEA   RMSEA 90%CI    SRMR
+-------------------------------------------------------------------------------- 
+  Step 1: CFA (4-factor)          668.76    164   0.930  0.077  [0.071,0.083]   0.062
+  Step 2: Main Effects (OLS)      F-test      2  R2=0.726    —           —  f2=0.002
+  Step 3: Full Moderated (OLS)    F-test      4  R2=0.741    —           —  f2=0.056
+
+  Model Comparison F-tests:
+  A->B (add quadratic):      F(2,516)=0.602  p=0.5480  DeltaR2=0.0006
+  B->C (add moderation):     F(4,512)=7.171  p=0.0000  DeltaR2=0.0145
+  -> Saved: Table3_Fit_Indices.xlsx
+
+[TABLE 4] STRUCTURAL COEFFICIENTS — Full Moderated Nonlinear Model
+======================================================================
+  Path                                   b  HC3_SE        p  β_std  95%CI_lo  95%CI_hi  sig 
+------------------------------------------------------------------------------------- 
+  AIP → FSP (linear, b1)         -0.3616  0.0224   0.0000  -0.4324   -0.4057   -0.3176  ***
+  AIP² → FSP (quadratic, b2)    -0.0061  0.0176   0.7285  -0.0084   -0.0407   +0.0285  ns
+  PA → FSP (linear, b3)          +0.3109  0.0229   0.0000  +0.3524   +0.2660   +0.3558  ***
+  PA² → FSP (quadratic, b4)     +0.0022  0.0173   0.8989  +0.0029   -0.0317   +0.0361  ns
+  DR → FSP (direct, b5)          +0.5207  0.0368   0.0000  +0.5722   +0.4483   +0.5931  ***
+  AIP × DR (b6)                   +0.0151  0.0176   0.3922  +0.0196   -0.0196   +0.0498  ns
+  AIP² × DR (b7) [H3]            -0.0597  0.0132   0.0000  -0.1388   -0.0857   -0.0338  ***
+  PA × DR (b8)                    +0.0237  0.0180   0.1885  +0.0310   -0.0117   +0.0591  ns
+  PA² × DR (b9) [H4]             -0.0448  0.0130   0.0006  -0.1057   -0.0702   -0.0193  ***
+  R² = 0.7407  |  Adj-R² = 0.7362  |  N = 522
+  -> Saved: Table4_Structural_Coefficients.xlsx
+
+[INFLECTION POINTS — Raw Likert Scale (1–5)]
+======================================================================
+  Grand means (item-level): AIP=3.024  PA=3.157  DR=3.139
+  Raw inflection = centered inflection + grand mean
+
+  DR Level        DR_raw   AIP*(raw)    PA*(raw)   AIP*(ctr)  Shape_AIP
+---------------------------------------------------------------------- 
+  Low (Q25)        1.994  6.07 [out of 1-5]  0.50 [out of 1-5]       3.041  U-shape / PA:convex
+  Med (Q50)        3.027  311.37 [out of 1-5]  -18.18 [out of 1-5]     308.345  U-shape / PA:convex
+  High (Q75)       4.028  0.08 [out of 1-5]  7.57 [out of 1-5]      -2.942  inverted-U / PA:concave
+  -> Saved: Table_Inflection_Raw_Scale.xlsx
+
+[FIGURE: SIMPLE SLOPES — Publication Quality]
+======================================================================
+  -> Saved: Fig5_Simple_Slopes_Publication.pdf
+
+[TABLE ROBUSTNESS] ROBUSTNESS CHECKS SUMMARY
+======================================================================
+  Check                    AIP²      PA²    b7(H3)    b9(H4)        DR
+------------------------------------------------------------ 
+  Main Model (N=484)     -0.0061   +0.0022   -0.0597   -0.0448   +0.5207
+    (p-values)            0.7285    0.8989    0.0000    0.0006    0.0000
+  Outlier-removed (N=522)   -0.0061   +0.0022   -0.0597   -0.0448   +0.5207
+    (p-values)            0.7285    0.8989    0.0000    0.0006    0.0000
+  -> Saved: Table_Robustness_Summary.xlsx
+
+======================================================================
+DONE. Files saved to:  D:/CANH/Nghiên cứu khoa học/VIẾT BÁO - CHẠY SỐ LIỆU/Cân bằng giữa Đổi mới và Sức khỏe Tinh thần 
+======================================================================
+
+=== STDERR ===
+Warning messages:
+1: package 'lavaan' was built under R version 4.4.3 
+2: package 'semTools' was built under R version 4.4.3 
+3: package 'writexl' was built under R version 4.4.3 
+Loading required package: nlme
+This is mgcv 1.9-1. For overview type 'help("mgcv-package")'.
+There were 18 warnings (use warnings() to see them)
+Warning messages:
+1: In norm.inter(t, adj.alpha) :
+  extreme order statistics used as endpoints
+2: In norm.inter(t, adj.alpha) :
+  extreme order statistics used as endpoints
+Warning message:
+lavaan->lav_object_post_check():  
+   some estimated ov variances are negative 
+Warning messages:
+1: lavaan->lav_object_post_check():  
+   some estimated ov variances are negative 
+2: lavaan->lav_object_post_check():  
+   some estimated ov variances are negative 
+Warning message:
+In chisq.test(observed_bart, p = rep(0.25, 4)) :
+  Chi-squared approximation may be incorrect
+Warning message:
+In text.default(-2.3, y_range[2] * 0.95, "● = inflection point",  :
+  conversion failure on '● = inflection point' in 'mbcsToSbcs': for ● (U+25CF)

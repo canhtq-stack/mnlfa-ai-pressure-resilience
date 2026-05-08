@@ -1,0 +1,225 @@
+=== SUPPLEMENTARY ANALYSES LOG ===
+C:\Program Files\R\R-4.4.1\bin\Rscript.exe --vanilla D:\CANH\Nghiên cứu khoa học\VIẾT BÁO - CHẠY SỐ LIỆU\Cân bằng giữa Đổi mới và Sức khỏe Tinh thần\MNLFA_Supplementary.R D:/CANH/Nghiên cứu khoa học/VIẾT BÁO - CHẠY SỐ LIỆU/Cân bằng giữa Đổi mới và Sức khỏe Tinh thần/_mnlfa_data.csv D:/CANH/Nghiên cứu khoa học/VIẾT BÁO - CHẠY SỐ LIỆU/Cân bằng giữa Đổi mới và Sức khỏe Tinh thần
+
+=== STDOUT ===
+======================================================================
+MNLFA_Supplementary.R — v1.0
+CSV: D:/CANH/Nghiên cứu khoa học/VIẾT BÁO - CHẠY SỐ LIỆU/Cân bằng giữa Đổi mới và Sức khỏe Tinh thần/_mnlfa_data.csv
+OUT: D:/CANH/Nghiên cứu khoa học/VIẾT BÁO - CHẠY SỐ LIỆU/Cân bằng giữa Đổi mới và Sức khỏe Tinh thần
+======================================================================
+
+Dữ liệu: N = 522
+
+[SETUP] Tái tạo CFA từ Stage 1...
+  CFA converged: TRUE
+  Model C tái tạo thành công.
+
+======================================================================
+[BLOCK 1] DESCRIPTIVE STATISTICS + CORRELATION MATRIX
+======================================================================
+
+  [1a] Item-level descriptives:
+      Mean    SD Min Max   Skew   Kurt
+AIP1 2.975 1.255   1   5 -0.069 -1.021
+AIP2 2.962 1.228   1   5 -0.070 -0.945
+AIP3 3.071 1.126   1   5 -0.123 -0.657
+AIP4 3.004 1.171   1   5 -0.036 -0.851
+AIP5 3.107 1.190   1   5 -0.118 -0.864
+PA1  3.155 1.189   1   5 -0.225 -0.828
+PA2  3.159 1.184   1   5 -0.156 -0.846
+PA3  3.111 1.209   1   5 -0.109 -0.923
+PA4  3.172 1.155   1   5 -0.219 -0.737
+PA5  3.186 1.196   1   5 -0.293 -0.786
+DR1  3.148 1.151   1   5 -0.191 -0.778
+DR2  3.121 1.160   1   5 -0.140 -0.773
+DR3  3.199 1.201   1   5 -0.214 -0.831
+DR4  3.065 1.162   1   5 -0.090 -0.834
+DR5  3.165 1.174   1   5 -0.172 -0.818
+FSP1 3.021 1.348   1   5 -0.038 -1.183
+FSP2 3.059 1.300   1   5 -0.058 -1.077
+FSP3 3.036 1.365   1   5 -0.043 -1.197
+FSP4 3.057 1.329   1   5 -0.051 -1.117
+FSP5 3.054 1.359   1   5 -0.047 -1.161
+
+  [1b] Factor score descriptives (centered):
+    Factor Mean     SD     Min    Max
+AIP    AIP    0 1.2492 -2.0820 2.1021
+PA      PA    0 1.1843 -2.2199 1.8926
+DR      DR    0 1.1482 -2.1928 1.8918
+FSP    FSP    0 1.0448 -1.7860 1.6979
+
+  [1c] Factor score correlation matrix:
+  [Note: These are factor score correlations, approximating latent r]
+       AIP     PA     DR    FSP
+AIP  1.000 -0.346 -0.331 -0.655
+PA  -0.346  1.000  0.296  0.596
+DR  -0.331  0.296  1.000  0.641
+FSP -0.655  0.596  0.641  1.000
+
+  [1d] Combined table (Mean, SD, r matrix) — paper-ready:
+    Factor Mean   SD Alpha   AVE  r_AIP   r_PA   r_DR  r_FSP
+AIP    AIP 3.02 1.00 0.894 0.630  1.000 -0.346 -0.331 -0.655
+PA      PA 3.16 1.00 0.895 0.637 -0.346  1.000  0.296  0.596
+DR      DR 3.14 0.97 0.884 0.618 -0.331  0.296  1.000  0.641
+FSP    FSP 3.05 1.10 0.877 0.584 -0.655  0.596  0.641  1.000
+  -> Saved: Supp_Desc_Items.xlsx
+  -> Saved: Supp_Desc_FactorScores.xlsx
+  -> Saved: Supp_Desc_Combined.xlsx
+
+======================================================================
+[BLOCK 2] VIF DIAGNOSTICS (MULTICOLLINEARITY)
+======================================================================
+
+  [2a] VIF for Model C (all 9 predictors):
+  [INFO] Package 'car' không có sẵn. Dùng VIF thủ công.
+  Term                       VIF   Tolerance  Flag
+-------------------------------------------------- 
+  AIP_c                    1.375      0.7274  [OK]
+  AIP_sq                   1.137      0.8794  [OK]
+  PA_c                     1.336      0.7487  [OK]
+  PA_sq                    1.152      0.8680  [OK]
+  DR_c                     3.364      0.2973  [OK]
+  AIP_x_DR                 1.289      0.7759  [OK]
+  AIP_sq_DR                2.482      0.4028  [OK]
+  PA_x_DR                  1.329      0.7527  [OK]
+  PA_sq_DR                 2.389      0.4186  [OK]
+
+  Max VIF = 3.364
+  [OK] All VIF < 5: Multicollinearity acceptable.
+
+  [2b] VIF cho Model A (linear only — baseline):
+  AIP_c            VIF = 1.215
+  PA_c             VIF = 1.186
+  DR_c             VIF = 1.173
+  -> Saved: Supp_VIF_ModelC.xlsx
+
+======================================================================
+[BLOCK 3] COMMON METHOD BIAS — HARMAN'S SINGLE FACTOR TEST
+======================================================================
+
+  Phương pháp: EFA 1 nhân tố trên toàn bộ 20 items
+  Tiêu chí: Nếu 1 nhân tố giải thích > 50% tổng variance -> CMB là vấn đề
+
+  PC1 variance explained: 0.4068 (40.68%)
+  PC2 variance explained: 0.1338 (13.38%)
+  PC3 variance explained: 0.1309 (13.09%)
+
+  [OK] PC1 = 40.7% < 50% -> Không có bằng chứng CMB nghiêm trọng.
+         Có thể báo cáo trong bản thảo như sau:
+         'Harman's single factor test indicated that the first
+          unrotated factor accounted for 40.7% of the total
+          variance (threshold: 50%), suggesting that common
+          method bias does not pose a serious threat to the
+          validity of this study (Podsakoff et al., 2003).'
+
+  Eigenvalue summary (top 10 PCs):
+   PC Eigenvalue Var_Explained Cum_Var
+1   1     8.1354        40.677  40.677
+2   2     2.6751        13.376  54.052
+3   3     2.6183        13.092  67.144
+4   4     0.8327         4.163  71.308
+5   5     0.5274         2.637  73.944
+6   6     0.5237         2.619  76.563
+7   7     0.4850         2.425  78.988
+8   8     0.4815         2.408  81.396
+9   9     0.4600         2.300  83.696
+10 10     0.4428         2.214  85.910
+  -> Saved: Supp_Harman_CMB.xlsx
+
+  [NOTE] CFA-based CMB test đã được chạy trong MNLFA_lavaan.R.
+  Kết quả xem tại: Step1b_CMB_CFA_Test.xlsx
+  Báo cáo cả hai kết quả (Harman + CFA-CMF) trong Section 4.1.
+
+======================================================================
+[BLOCK 4] SIMPLE SLOPES TABLE — PUBLICATION READY
+======================================================================
+
+  Simple slope = marginal effect of predictor at given X and DR level
+  For quadratic: slope at x0 = (b_lin + b_int_lin*DR) + 2*(b_quad + b_int_quad*DR)*x0
+
+  AIP Level               DR Level             Slope      SE       p  sig
+-------------------------------------------------------------------- 
+  Low AIP (−1SD)        Low DR (Q25)            NA  0.0636      NA  
+  Low AIP (−1SD)        Med DR (Q50)            NA  0.0401      NA  
+  Low AIP (−1SD)        High DR (Q75)           NA  0.0460      NA  
+  High AIP (+1SD)         Low DR (Q25)            NA  0.0680      NA  
+  High AIP (+1SD)         Med DR (Q50)            NA  0.0479      NA  
+  High AIP (+1SD)         High DR (Q75)           NA  0.0736      NA  
+
+  PA Level                DR Level             Slope      SE       p  sig
+-------------------------------------------------------------------- 
+  Low PA (−1SD)         Low DR (Q25)            NA  0.0510      NA  
+  Low PA (−1SD)         Med DR (Q50)            NA  0.0441      NA  
+  Low PA (−1SD)         High DR (Q75)           NA  0.0613      NA  
+  High PA (+1SD)          Low DR (Q25)            NA  0.0780      NA  
+  High PA (+1SD)          Med DR (Q50)            NA  0.0528      NA  
+  High PA (+1SD)          High DR (Q75)           NA  0.0609      NA  
+  -> Saved: Supp_Simple_Slopes_Full.xlsx
+
+======================================================================
+[BLOCK 5] FORNELL-LARCKER MATRIX
+======================================================================
+
+  [Diagonal = sqrt(AVE); Off-diagonal = latent factor correlations]
+
+                 AIP        PA        DR       FSP
+-------------------------------------------- 
+  AIP       [ 0.794]    -0.359    -0.343    -0.712
+  PA          -0.359  [ 0.798]     0.306     0.647
+  DR          -0.343     0.306  [ 0.786]     0.694
+  FSP         -0.712     0.647     0.694  [ 0.764]
+
+  Fornell-Larcker criterion (sqrt(AVE) > max|r|):
+  AIP: sqrt(AVE)=0.794 > max|r|=0.712 -> PASS
+  PA: sqrt(AVE)=0.798 > max|r|=0.647 -> PASS
+  DR: sqrt(AVE)=0.786 > max|r|=0.694 -> PASS
+  FSP: sqrt(AVE)=0.764 > max|r|=0.712 -> PASS
+  Overall: ALL PASS
+  -> Saved: Supp_FornellLarcker.xlsx
+
+======================================================================
+[BLOCK 6] ROBUSTNESS COMPARISON TABLE — EXTENDED
+======================================================================
+
+  Đọc kết quả outlier và MM từ các file Excel đã tạo...
+
+  Term                    Main_b      Main_p   Outlier_b   Outlier_p        MM_b        MM_p
+-------------------------------------------------------------------------------------------- 
+  AIP² (H1)             -0.0061      0.6864     -0.0061      0.7285     -0.0025      0.8933
+  PA² (H2)              +0.0022      0.9032     +0.0022      0.8989     +0.0003      0.9892
+  AIP²×DR (H3)         -0.0597      0.0002     -0.0597      0.0000     -0.0592      0.0003
+  PA²×DR (H4)          -0.0448      0.0020     -0.0448      0.0006     -0.0473      0.0025
+  DR direct (H5)         +0.5207      0.0000     +0.5207      0.0000     +0.5231      0.0000
+  Main model N = 522
+
+  R² (Main): 0.7407 | Adj-R²: 0.7362
+  -> Saved: Supp_Robustness_Extended.xlsx
+
+======================================================================
+SUPPLEMENTARY ANALYSES HOÀN THÀNH
+======================================================================
+
+Files được tạo:
+  [OK]  Supp_Desc_Items.xlsx
+  [OK]  Supp_Desc_FactorScores.xlsx
+  [OK]  Supp_Desc_Combined.xlsx
+  [OK]  Supp_VIF_ModelC.xlsx
+  [OK]  Supp_Harman_CMB.xlsx
+  [OK]  Supp_Simple_Slopes_Full.xlsx
+  [OK]  Supp_FornellLarcker.xlsx
+  [OK]  Supp_Robustness_Extended.xlsx
+
+Ghi chú cho bài báo:
+  Block 1 -> Table 1 (Descriptive Statistics & Correlations)
+  Block 2 -> Footnote trong Section 3.4 hoặc Appendix
+  Block 3 -> Paragraph trong Section 3.4 (CMB)
+  Block 4 -> Table bổ sung hoặc Appendix (Simple Slopes)
+  Block 5 -> Table 2 (Measurement Model) — thêm vào FL matrix
+  Block 6 -> Table Robustness Summary
+======================================================================
+
+=== STDERR ===
+Warning messages:
+1: package 'lavaan' was built under R version 4.4.1 
+2: package 'writexl' was built under R version 4.4.1 
+3: package 'readxl' was built under R version 4.4.1 
